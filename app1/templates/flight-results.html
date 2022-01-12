@@ -1,0 +1,1156 @@
+{% extends "layout.html" %}
+{%load static%}
+{% block header %}
+<title>safar online index</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static '/styles/search2/font-awesome.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/search2/lineicons.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/search2/weather-icons.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/search2/bootstrap.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/search2/styles.css' %}"/>
+
+
+<link rel='stylesheet' href="{% static '/styles/Newfolder/style21.css' %}" />
+<link rel='stylesheet' href="{% static '/styles/Newfolder/style (1).css' %}" />
+{% endblock %}
+{% block content %}
+<div id="flight-data-page">
+  <div class="theme-page-section theme-page-section-gray">
+    <div class="container">
+      <div class="row row-col-static" id="sticky-parent" data-gutter="20" >
+        <div class="col-md-3">
+
+          <div class="sticky-col _mob-h hidden-xs " >
+            
+              <div style="padding: 20px; background-color: white; border-radius: 20px;">
+            <div class="theme-search-results-sidebar">
+              <div class="theme-search-results-sidebar-sections _mb-10 _br-2 theme-search-results-sidebar-sections-white">
+                <div class="theme-search-results-sidebar-section">
+                  <h5>فیلتر نتایج جستجو</h5>
+                  <span class="_fs-11">نمایش 242 مورد از 282 تور</span>
+                </div>
+                <div class="theme-search-results-sidebar-section">
+                  <h5 class="theme-search-results-sidebar-section-title">توقف</h5>
+                  <div class="theme-search-results-sidebar-section-checkbox-list">
+                    <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">بدون توقف</span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">یک توقف</span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">دو توقف</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="theme-search-results-sidebar-section">
+                  <h5 class="theme-search-results-sidebar-section-title">کلاس پرواز</h5>
+                  <div class="theme-search-results-sidebar-section-checkbox-list">
+                    <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">اکونومی</span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">بیزینس</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="theme-search-results-sidebar-section">
+                  <h5 class="theme-search-results-sidebar-section-title">ساعت حرکت</h5>
+                  <div class="theme-search-results-sidebar-section-checkbox-list">
+                    <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">صبح (از ساعت۰۰  تا ۰۶)
+                          </span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">ظهر (از ساعت ۰۶ تا ۱۲)
+                          </span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">بعدازظهر (از ساعت ۱۲ تا ۱۸)
+                          </span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">شب (از ساعت ۱۸ تا ۲۴)
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="theme-search-results-sidebar-section">
+                  <h5 class="theme-search-results-sidebar-section-title"> نوع بلیط </h5>
+                  <div class="theme-search-results-sidebar-section-checkbox-list">
+                    <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox" id='systemflightsonlycheckbox'/>
+                          <span class="icheck-title" >
+                          سیستمی
+                          </span>
+                        </label>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox" id="charterflightsonlycheckbox"/>
+                          <span class="icheck-title">
+                          چارتر
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="theme-search-results-sidebar-section-2">
+                  <h5 class="theme-search-results-sidebar-section-title"> شرکت های هواپیمایی </h5>
+                  <div class="theme-search-results-sidebar-section-checkbox-list">
+                    <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">آسمان</span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,198,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">  ایر تور  </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,540,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">
+                          ایران ایر</span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,000,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">
+                          تابان
+                      </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,836,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">
+                          زاگرس
+                      </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,198,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">
+                          ساها
+                      </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,360,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox" id=AirlineW5/>
+                          <span class="icheck-title">
+                          ماهان
+                      </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,329,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">
+                          معراج
+                      </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,329,000 ریال</span>
+                      </div>
+                      <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                        <label class="icheck-label">
+                          <input class="icheck" type="checkbox"/>
+                          <span class="icheck-title">
+                          وارش
+                      </span>
+                        </label>
+                        <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 3,250,000 ریال</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        
+      
+        <div class="col-md-9">
+          <div class="theme-search-results-sort _b-n _mob-h clearfix "style="border-radius: 20px;">
+            <h5 class="theme-search-results-sort-title">مرتب سازی براساس :</h5>
+            <ul class="theme-search-results-sort-list">
+              <li class="active">
+                <a href="#">قیمت
+                </a>
+              </li>
+              <li >
+                <a href="#">ساعت حرکت
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="theme-search-results">
+            {% csrf_token %}
+            {% for flight in flights.Flights%}
+
+
+            {% with id=flight.Flight_NUM %}
+
+            {% with origin=flight.Flight_Data.0.Origin %}  
+            {% with destination=flight.Flight_Data.0.Destination %}
+
+            {% with departuretime=flight.Flight_Data.0.DepartureTime %}
+            {% with departuredate=flight.Flight_Data.0.DepartureDate %}
+            {% with departuredateshamsi=flight.Flight_Data.0.DepartureDateShamsi %}
+
+            {% with arrivaltime=flight.Flight_Data.0.ArrivalTime %}
+            {% with arrivaldate=flight.Flight_Data.0.ArrivalDate %}
+
+            {% with adulttc=flight.Flight_Fare.0.AdultTotalPrice%}
+
+            {% with classtype=flight.Flight_Fare.0.ClassType %}
+            {% with classname=flight.Flight_Fare.0.CabinClassName %}
+            {% with airlinecode=flight.Flight_Data.0.Airline %}
+
+            {% with providerid=flight.Flight_Fare.0.IssuerCode %}
+            {% with issuerflightnum=flight.Flight_Fare.0.FlightNumberUsedbyIssuer %}
+            {% with airlinename=flight.Flight_Fare.0.AirlineName %}
+            
+
+            <div class="filter displayon {{classtype}}" style="border-radius: 10px;">
+            <div class="flight-data" id="flight-number-{{id}}-data" data-origin="{{origin}}" data-destination="{{destination}}" data-airlinename="{{airlinename}}"
+            data-departuretime="{{departuretime}}" data-departuredate="{{departuredate}}" data-arrivaltime="{{arrivaltime}}" data-arrivaldate="{{arrivaldate}}"
+            data-providerid="{{providerid}}" data-airlinecode="{{airlinecode}}" data-issuerflightnum="{{issuerflightnum}}">
+            <div class="theme-search-results-item _mb-10 _b-n theme-search-results-item-rounded theme-search-results-item-" style="border-radius: 20px;">
+              <div class="theme-search-results-item-preview">
+                <a class="theme-search-results-item-mask-link" href='#searchResultsItem-{{id}}' role="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchResultsItem-{{id}}"></a>
+                <div class="row" data-gutter="20">
+                  <div class="col-md-10 ">
+                    <div class="theme-search-results-item-flight-sections">
+                      <div class="theme-search-results-item-flight-section">
+                        <div class="row row-no-gutter row-eq-height">
+                          <div class="col-md-2 ">
+                            <div class="theme-search-results-item-flight-section-airline-logo-wrap">
+                              <img class="theme-search-results-item-flight-section-airline-logo" src="/static/img/airline-logo/new/{{airlinecode}}.svg" alt="Image Alternative text" title="Image Title"/>
+                            </div>
+                          </div>
+  
+                          <div class="col-md-10 ">
+                            <div class="theme-search-results-item-flight-section-item">
+                              <div class="row">
+                                <div class="col-md-3 ">
+  
+                                  <div class="theme-search-results-item-flight-section-meta">
+                                    <p class="theme-search-results-item-flight-section-meta-city">{{origin}}</p>
+                                    <p class="theme-search-results-item-flight-section-meta-time">{{departuretime}}</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                  <div class="theme-search-results-item-flight-section-path">
+                                    <div class="theme-search-results-item-flight-section-path-fly-time">
+                                      <p>{{departuredate}}</p>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-section-path-line"></div>
+                                    <div class="theme-search-results-item-flight-section-path-line-start">
+                                      <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
+                                      <div class="theme-search-results-item-flight-section-path-line-dot"></div>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-section-path-line-end">
+                                      <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
+                                      <div class="theme-search-results-item-flight-section-path-line-dot"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3 ">
+                                  <div class="theme-search-results-item-flight-section-meta">
+                                    <p class="theme-search-results-item-flight-section-meta-city">{{destination}}</p>
+                                    <p class="theme-search-results-item-flight-section-meta-time">{{arrivaltime}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="theme-search-results-item-flight-section-airline-title">  جزییات پرواز <i class="fa fa-chevron-down"></i> </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 ">
+                    <div class="hr dashed hidden-xs"></div>
+                    <div class="theme-search-results-item-book">
+                      <div class="theme-search-results-item-price">
+                        <p class="theme-search-results-item-price-tag text-success">{{adulttc}} <span class="_fs-11">تومان</span> </p>
+                        <p class="theme-search-results-item-price-sign">{{classtype}}</p>
+                      </div>
+                      <a class="btn btn-primary-inverse btn-block theme-search-results-item-price-btn"style="border-radius: 20px;" href="#" onclick="buyticket({{id}})">انتخاب بلیط <i class="fa fa-arrow-left"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="collapse theme-search-results-item-collapse" id="searchResultsItem-{{id}}">
+                <div class="theme-search-results-item-extend">
+                  <a class="theme-search-results-item-extend-close" href="#searchResultsItem-{{id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchResultsItem-{{id}}">&#10005;</a>
+                  <div class="theme-search-results-item-extend-inner" id="flight-{{id}}-more-details">
+                    <div class="theme-search-results-item-flight-detail-items">
+                      <div class="theme-search-results-item-flight-details">
+                        <div class="row">
+                          <div class="col-md-3 ">
+                            <div class="theme-search-results-item-flight-details-info">
+                              <p class="theme-search-results-item-flight-details-info-date">{{departuredateshamsi}} </p>
+                              <p class="theme-search-results-item-flight-details-info-cities">{{destination}} ← {{origin}} </p>
+                              <p class="theme-search-results-item-flight-details-info-fly-time">  شماره پرواز:{{flight.Flight_Fare.0.FlightNumberUsedbyIssuer}} </p>
+                              <p class="theme-search-results-item-flight-details-info-stops">بدون توقف</p>
+                            </div>
+                          </div>
+                          <div class="col-md-9 ">
+                            <div class="theme-search-results-item-flight-details-schedule">
+                              <ul class="theme-search-results-item-flight-details-schedule-list">
+                                <li>
+                                  <i class="fa fa-plane theme-search-results-item-flight-details-schedule-icon"></i>
+                                  <div class="theme-search-results-item-flight-details-schedule-dots"></div>
+                                  <div class="theme-search-results-item-flight-details-schedule-time">
+                                    <span class="theme-search-results-item-flight-details-schedule-time-item">{{departuretime}}</span>
+                                    <span class="theme-search-results-item-flight-details-schedule-time-separator">&mdash;</span>
+                                    <span class="theme-search-results-item-flight-details-schedule-time-item">{{arrivaltime}}
+                                    </span>
+                                  </div>
+                                  <p class="theme-search-results-item-flight-details-schedule-fly-time">{{flight.Flight_Data.0.Duration}}</p>
+                                  <div class="theme-search-results-item-flight-details-schedule-destination">
+                                    <div class="theme-search-results-item-flight-details-schedule-destination-item">
+                                      <p class="theme-search-results-item-flight-details-schedule-destination-title">
+                                        <b>{{destination}} ← {{origin}}</b>
+                                      </p>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-details-schedule-destination-separator">
+                                    </div>
+                                    <div class="theme-search-results-item-flight-details-schedule-destination-item">
+                                      <p class="theme-search-results-item-flight-details-schedule-destination-title">
+  
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <ul class="theme-search-results-item-flight-details-schedule-features">
+                                    <li>بار مجاز: اعلام نشده</li>
+                                    <li>اکونومی</li>
+                                    <li>کلاس نرخی: {{classname}}</li>
+                                    <li>ایرلاین: {{airlinename}}</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+          {% endwith %}
+         
+          
+          
+
+          {% endfor %}
+            <div class="theme-search-results-mobile-filters" id="mobileFilters">
+              <a class="theme-search-results-mobile-filters-btn magnific-inline" href="#MobileFilters">
+                <i class="fa fa-filter"></i>فیلتر
+              </a>
+              <div class="magnific-popup mfp-hide" id="MobileFilters">
+                <div class="theme-search-results-sidebar">
+                  <div class="theme-search-results-sidebar-sections _mb-20 _br-2 theme-search-results-sidebar-sections-white">
+                    <div class="theme-search-results-sidebar-section">
+                      <h5 class="theme-search-results-sidebar-section-title">توقف</h5>
+                      <div class="theme-search-results-sidebar-section-checkbox-list">
+                        <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">بدون توقف</span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">یک توقف</span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">دو توقف</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="theme-search-results-sidebar-section">
+                      <h5 class="theme-search-results-sidebar-section-title">کلاس پرواز</h5>
+                      <div class="theme-search-results-sidebar-section-checkbox-list">
+                        <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">اکونومی</span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">بیزینس</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="theme-search-results-sidebar-section">
+                      <h5 class="theme-search-results-sidebar-section-title">ساعت حرکت</h5>
+                      <div class="theme-search-results-sidebar-section-checkbox-list">
+                        <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">صبح (از ساعت۰۰  تا ۰۶)
+                          </span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">ظهر (از ساعت ۰۶ تا ۱۲)
+                          </span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">بعدازظهر (از ساعت ۱۲ تا ۱۸)
+                          </span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">شب (از ساعت ۱۸ تا ۲۴)
+                          </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="theme-search-results-sidebar-section">
+                      <h5 class="theme-search-results-sidebar-section-title"> نوع بلیط </h5>
+                      <div class="theme-search-results-sidebar-section-checkbox-list">
+                        <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          سیستمی
+                          </span>
+                            </label>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          چارتر
+                          </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="theme-search-results-sidebar-section">
+                      <h5 class="theme-search-results-sidebar-section-title"> شرکت های هواپیمایی </h5>
+                      <div class="theme-search-results-sidebar-section-checkbox-list">
+                        <div class="theme-search-results-sidebar-section-checkbox-list-items">
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">آسمان</span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,198,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">  ایر تور  </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,540,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          ایران ایر</span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,000,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          تابان
+                      </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,836,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          زاگرس
+                      </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,198,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          ساها
+                      </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,360,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          ماهان
+                      </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,329,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          معراج
+                      </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 2,329,000 ریال</span>
+                          </div>
+                          <div class="checkbox theme-search-results-sidebar-section-checkbox-list-item">
+                            <label class="icheck-label">
+                              <input class="icheck" type="checkbox"/>
+                              <span class="icheck-title">
+                          وارش
+                      </span>
+                            </label>
+                            <span class="theme-search-results-sidebar-section-checkbox-list-amount">از 3,250,000 ریال</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="flight-buy-page" style="display: none;"></div>
+<div id="loadingscreen" style="display:none; text-align: center;">
+  <img src="{%static 'img/loading.gif' %}" alt="Loading">
+</div>
+<div id="flight-check-buy-page" style="display: none;"></div>
+
+{% endblock %}
+{% block js %}
+<script src="{%static '/js/jquery.js' %}"></script>
+<script src="{%static '/js/moment.js' %}"></script>
+<script src="{%static '/js/bootstrap.js' %}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&amp;callback=initMap&amp;libraries=places"></script>
+<script src="{%static '/js/owl-carousel.js' %}"></script>
+<script src="{%static '/js/blur-area.js' %}"></script>
+<script src="{%static '/js/icheck.js' %}"></script>
+<script src="{%static '/js/gmap.js' %}"></script>
+<script src="{%static '/js/magnific-popup.js' %}"></script>
+<script src="{%static '/js/ion-range-slider.js' %}"></script>
+<script src="{%static '/js/sticky-kit.js' %}"></script>
+<script src="{%static '/js/smooth-scroll.js' %}"></script>
+<script src="{%static '/js/fotorama.js' %}"></script>
+<script src="{%static '/js/typeahead.js' %}"></script>
+<script src="{%static '/js/quantity-selector.js' %}"></script>
+<script src="{%static '/js/countdown.js' %}"></script>
+<script src="{%static '/js/window-scroll-action.js' %}"></script>
+<script src="{%static '/js/fitvid.js' %}"></script>
+<script src="{%static '/js/youtube-bg.js' %}"></script>
+<script src="{%static '/js/custom.js' %}"></script>
+
+
+<script>
+
+$('#systemflightsonlycheckbox').on('ifChecked', function(event){
+
+  $('#charterflightsonlycheckbox').iCheck('uncheck');
+  var x = document.getElementsByClassName("filter CHARTER");
+  for(var i = 0; i < x.length; i++){
+    x[i].style.display = 'none';
+
+    //$(x[i]).hide();
+}});
+
+$('#systemflightsonlycheckbox').on('ifUnchecked', function(event){
+  var x = document.getElementsByClassName("filter CHARTER");
+  for(var i = 0; i < x.length; i++){
+    $(x[i]).show();
+}});
+
+$('#charterflightsonlycheckbox').on('ifChecked', function(event){
+  $('#systemflightsonlycheckbox').iCheck('uncheck');
+  var x = document.getElementsByClassName("filter SYSTEM");
+  for(var i = 0; i < x.length; i++){
+    $(x[i]).hide();
+}});
+$('#charterflightsonlycheckbox').on('ifUnchecked', function(event){
+  var x = document.getElementsByClassName("filter SYSTEM");
+  for(var i = 0; i < x.length; i++){
+    $(x[i]).show();
+}});
+
+$('#AirlineW5').on('ifChecked', function(event){
+  var x = document.getElementsByClassName("filter");
+  for(var i = 0; i < x.length; i++){
+    $(x[i]).hide();
+}});
+
+async function postData(url = '', data) {
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  const response = await fetch(url, {
+    method: 'POST', 
+    mode: 'same-origin', 
+    cache: 'no-cache', 
+    headers: {
+      "X-CSRFToken": csrftoken,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+  console.log(response)
+  return response.json();
+}
+
+const receiveddata  = {{ flights|safe }};
+
+function flightjsonfinder(x){
+
+  for(var i = 0; i < receiveddata["NumberOfFlights"]; i++) {
+    console.log('loopinf')
+    if (receiveddata["Flights"][i]['Flight_NUM'] == x) {
+      return receiveddata["Flights"][i]
+    };
+}
+};
+
+
+
+
+function buyticket(x){
+  document.getElementById("flight-data-page").style.display='none';
+  var buypage = document.getElementById("flight-buy-page")
+  buypage.style.display='block';
+
+  
+  const idofflight = "flight-number-"+x+"-data"
+
+
+  var flight = document.getElementById(idofflight);
+  var origin = flight.dataset.origin;
+  var destination = flight.dataset.destination;
+  var airlinecode = flight.dataset.airlinecode
+  var departuredate = flight.dataset.departuredate
+  var departuretime = flight.dataset.departuretime
+  var flightnumber = flight.dataset.issuerflightnum
+  var airlinename = flight.dataset.airlinename
+  var providerid = flight.dataset.providerid
+
+  var captchaData = {
+  'originLocationCode':origin,
+  'destinationLocationCode':destination,
+  'departureDate':departuredate,
+  'departureTime':departuretime,
+  'flightNum':flightnumber,
+  'source' : providerid,
+  'airlineName':airlinename,
+  'airlineIATAcode':airlinecode,
+  };
+  
+
+
+  var flightmoredetail = document.getElementById("flight-"+x+"-more-details").innerHTML;
+
+  const buypagehtml = ` 
+<div class="theme-page-section theme-page-section-lg" style="background-color: #e6e6e6;">
+    <div class="container">
+        <div class="roundbox-se">
+            <div style="padding: 10px;">
+                <div class="col-md-20">
+                    <div class="theme-payment-page-sections">
+                        <div class="theme-payment-page-sections-item">
+                            <div class="roundbox-se">
+                                <div style="padding: 15px;">
+                                    <div class="theme-search-results-item theme-payment-page-item-thumb">
+                                        <div class="row" data-gutter="20">
+                                            <div class="col-md-9 ">
+                                                <h5 class="theme-search-results-item-title"> ${destination} ← ${origin}</h5>
+                                                <p class="theme-search-results-item-flight-payment-info"><span>1
+                                                        بزرگسال</span>
+                                                    <span>اکونومی</span></p>
+                                                <ul class="theme-search-results-item-flight-payment-dates" onclick="">
+                                                    <li class="_mb-10"><i class="fa fa-calendar"></i> تاریخ رفت:دوشنبه
+                                                        13 خرداد</li>
+                                                </ul>
+                                                <a class="theme-search-results-item-flight-payment-details-link"
+                                                    href="#FlightPaymentDetails" data-toggle="collapse"
+                                                    aria-expanded="false" aria-controls="FlightPaymentDetails">جزئیات
+                                                    پرواز &nbsp;
+                                                    <i class="fa fa-angle-down"></i>
+                                                </a>
+                                                <div class="collapse _pt-20" id="FlightPaymentDetails">
+                                                    ${flightmoredetail}</div>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <div class="theme-search-results-item-img-wrap">
+                                                    <img class="theme-search-results-item-img _mob-h hidden-xs"src="/static/img/airline-logo/new/${airlinecode}.svg"alt="Image Alternative text" title="Image Title" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="userinfoform" onsubmit="event.preventDefault();">
+                            <div class="theme-payment-page-sections-item">
+                                <div class="roundbox-se">
+                                    <div style="padding: 15px;">
+                                        <div class="round-gray-box-title">
+                                            <h3 class="theme-payment-page-sections-item-title">اطلاعات مسافر</h3>
+                                        </div>
+                                        <div class="theme-payment-page-form">
+                                            <div class="theme-payment-page-form-title" style="padding-right: 5px;">
+                                                <label>
+                                                    <input type="radio" value="Male" name="Gender"id="gender-option-1"> آقا
+                                                </label>
+                                                <label>
+                                                    <input type="radio" value="Female" name="Gender"id="gender-option-2"> خانم
+                                                </label>
+                                            </div>
+                                            <div class="row row-col-gap" data-gutter="20">
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <input class="form-control" type="text" placeholder="نام"name="FirstName" style="border-radius: 20px;" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <input class="form-control inputstyle" type="text"placeholder=" نام خانوادگی" name="LastName" style="border-radius: 20px;" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <input class="form-control" type="tel" placeholder="کد ملی" name="IDNum" style="border-radius: 20px;" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <i class="fa fa-angle-down"></i>
+                                                        <select class="form-control" name="Nationality"
+                                                            style="border-radius: 20px;">
+                                                            <option value="IRN">
+                                                                ایران
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-payment-page-sections-item">
+                                <div class="roundbox-se">
+                                    <div style="padding: 15px;">
+                                        <div class="round-gray-box-title">
+                                            <h3 class="theme-payment-page-sections-item-title">اطلاعات تماس مسافر</h3>
+                                        </div>
+                                        <div class="theme-payment-page-form _mb-5">
+                                            <div class="row row-col-gap" data-gutter="20">
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group inputstyle">
+                                                        <input class="form-control" type="email" placeholder="ایمیل"name="email" style="border-radius: 20px;" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group inputstyle">
+                                                        <input class="form-control" type="tel" placeholder="تلفن همراه" name="phonenumber"style="border-radius: 20px;" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    <div class="row row-col-gap" data-gutter="20">
+                                                        <div class="col-md-6 ">
+                                                            <div class="theme-payment-page-form-item form-group inputstyle"
+                                                                id="captchapic" style="text-align: center;">
+                                                                <img src="static/img/2.png" alt=""style="border-radius: 20px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 ">
+                                                            <div
+                                                                class="theme-payment-page-form-item form-group inputstyle">
+                                                                <input class="form-control" id="captchacode"
+                                                                    name="captchacode" type="text" placeholder="کد "style="border-radius: 20px;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-payment-page-sections-item">
+                                <div class="roundbox-se">
+                                    <div style="padding: 15px;">
+                                        <div class="theme-payment-page-booking">
+                                            <div class="theme-payment-page-booking-header _mb-40">
+                                                <h3 class="theme-payment-page-booking-title">مبلغ قابل پرداخت :</h3>
+                                                <p class="theme-payment-page-booking-price text-success">3,289,000 
+                                                    <spanclass="_fs-sm">تومان</span>
+                                                </p>
+                                            </div>
+                                            <button class="btn _tt-uc btn-primary-inverse btn-lg btn-block" style="border-radius: 20px;" onclick="continueshopping(${x})" href="#">
+                                                ادامه‌ی فرآیند خرید
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`
+ buypage.innerHTML = "";
+ buypage.innerHTML += buypagehtml;
+
+ postData('/captcha',captchaData)
+  .then(data => {
+    requestid = data['captchacode']
+    captchaurl = data['captchaurl']
+    captchapic = document.getElementById("captchapic")
+    captchapic.innerHTML = "";
+    captchapic.innerHTML += `<img style="border-radius: 20px;" id="captchaimg" data-requestid="${requestid}"src=${captchaurl}>`;
+    console.log(data); // JSON data parsed by `data.json()` call
+  });
+
+
+};
+
+
+function backtoshopping(){
+  document.getElementById("flight-data-page").style.display='block';
+  document.getElementById("flight-buy-page").style.display='none';
+
+};
+
+
+function continueshopping(x){
+  document.getElementById("flight-buy-page").style.display='none'
+  document.getElementById("loadingscreen").style.display='block'
+
+
+  const capthcacode = document.getElementById("captchacode").value
+  const userinfoform = document.getElementById("userinfoform")
+  console.log(userinfoform)
+  const formData = new FormData(userinfoform)
+  for (var [key, value] of formData.entries()) { 
+  console.log(key, value);
+  }
+
+  var formpramsjson = {};
+  formData.forEach(function(value, key){
+    formpramsjson[key] = value;
+  });
+  
+
+
+  var useremail = formpramsjson["email"]
+  var userphonenumber = formpramsjson["phonenumber"]
+  formpramsjson["Type"]="Adult"
+  formpramsjson["EXdate"]=""
+    
+  var data = {
+    "FlightObject" : flightjsonfinder(x),
+    "Requestid" : document.getElementById("captchaimg").dataset.requestid,
+    "CaptchaCode":capthcacode,
+    "Passengers":formpramsjson,
+    "Email":useremail,
+    "PhoneNumber":userphonenumber
+  }
+
+postData('/flightbuy', data)
+  .then(data => {
+    console.log(data);
+    //bankredirect(data["TransactionData"])
+   
+    const passengerinfohtml = data["PNRData"]["Passengers"].map(passenger => 
+    `<li class="personalDataItem">
+        <div class="col col-sm-4">
+            <span>${passenger["FirstName"]} ${passenger["LastName"]}</span>
+        </div>
+        <div class="col col-sm-4">
+            <span>${passenger["IDNumber"]}</span>
+        </div>
+        <div class="col col-sm-4">
+            <span>${passenger["Type"]}</span>
+        </div>
+        <div class="col-sm-4">
+            <span>${passenger["Price"]}</span>
+        </div>
+    </li>`).join('');
+
+    saleid = data["SaleID"]
+    document.getElementById("flight-data-page").style.display='none';
+    document.getElementById("flight-buy-page").style.display='none';
+    document.getElementById("loadingscreen").style.display='none';
+    var x = document.getElementById("flight-check-buy-page")
+    x.style.display='block';
+    x.innerHTML = ""
+    x.innerHTML += `  
+    <div class="theme-page-section theme-page-section-lg" style="background-color: #e6e6e6;">
+    <div class="container">
+        <div class="roundbox-se">
+            <div style="padding: 10px;">
+                <div class="content reserveFormWrapper">
+                    <div class="reserveFormBody preReservePage active">
+                        <div class="paymentData">
+                            <div class="ticketReview flightTicketReview">
+                                <div class="content">
+                                    <ul class="ticketDataList">
+                                        <li class="ticketDataHeader personalDataHeader">
+                                            <div class="col col-sm-2 col-1 airlineLogo">
+                                                <span style="font-weight: bold;">ایرلاین</span>
+                                            </div>
+                                            <div class="col col-sm-3 col-sm-4 wentDate">
+                                                <span style="font-weight: bold;">حرکت</span>
+                                            </div>
+                                            <div class="col col-sm-3 col-sm-4 returnDate">
+                                                <span style="font-weight: bold;">رسیدن</span>
+                                            </div>
+                                            <div class="col col-sm-2 col-2 duration">
+                                                <span style="font-weight: bold;">مدت زمان</span>
+                                            </div>
+                                            <div class="col col-sm-2 col-1 flightClass">
+                                                <span style="font-weight: bold;">کلاس نرخی</span>
+                                            </div>
+                                        </li>
+                                        <li class="ticketDataItem personalDataItem">
+                                            <ul class="flightSegmentsList">
+                                                <li class="flightSegmentItems">
+                                                    <div class="col col-sm-2 col-1 airlineLogo">
+                                                        <img src="static/img/airline-logo/${data["FlightObject"]["Flight_Data"][0]["Airline"]}.png" alt="Mahan Air">
+                                                    </div>
+                                                    <div class="col col-sm-3 col-sm-4 wentDate">
+                                                        <span
+                                                            class="textTime">${data["FlightObject"]["Flight_Data"][0]["DepartureTime"]}</span>
+                                                        <span
+                                                            class="textDate">${data["FlightObject"]["Flight_Data"][0]["DepartureDate"]}</span>
+                                                        <span
+                                                            class="textDate">${data["FlightObject"]["Flight_Data"][0]["DepartureDateShamsi"]}</span>
+                                                        <span class="textCityCode">Tehran
+                                                            (THR)</span>
+                                                        <span class="textAirportCode">Mehrabad International
+                                                            Airport</span>
+                                                    </div>
+                                                    <div class="col col-sm-3 col-sm-4 returnDate">
+                                                        <span
+                                                            class="textTime">${data["FlightObject"]["Flight_Data"][0]["ArrivalTime"]}</span>
+                                                        <span
+                                                            class="textDate">${data["FlightObject"]["Flight_Data"][0]["ArrivalDate"]}</span>
+                                                        <span
+                                                            class="textDate">${data["FlightObject"]["Flight_Data"][0]["ArrivalDateShamsi"]}</span>
+                                                        <span class="textCityCode">Mashhad
+                                                            (MHD)</span>
+                                                        <span class="textAirportCode">Mashhad International
+                                                            Airport</span>
+                                                    </div>
+                                                    <div class="col col-sm-2 col-2 duration">
+                                                        <span
+                                                            class="defaultText">${data["FlightObject"]["Flight_Data"][0]["Duration"]}</span>
+                                                    </div>
+                                                    <div class="col col-sm-2 col-1 flightClass">
+                                                        <span class="defaultText">WA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bottom-line"></div>
+                            <div class="passengerDataToShow personalDataListWrapper formBox">
+                                <ul class="content personalDataList">
+                                    <li class="personalDataHeader">
+                                        <div class="col-sm-4 personalName">
+                                            <span style="font-weight: bold;">اطلاعات مسافر</span>
+                                        </div>
+                                        <div class="col-sm-4 personalBirthdate">
+                                            <span style="font-weight: bold;">کد شناسایی</span>
+                                        </div>
+                                        <div class="col-sm-4 personalCode">
+                                            <span style="font-weight: bold;">نوع</span>
+                                        </div>
+                                        <div class="col-sm-4 personalCode">
+                                            <span style="font-weight: bold;">قیمت</span>
+                                        </div>
+                                    </li>
+                                    ${passengerinfohtml}
+                                </ul>
+                            </div>
+                            <div class="bottom-line"></div>
+                            <div class="buyerDataBox formBox">
+                                <ul class="buyerDataToShow personalDataList">
+                                    <li class="personalDataHeader">
+                                        <div class="col col-sm-6 buyercell">
+                                            <span style="font-weight: bold;">آدرس ایمیل</span>
+                                        </div>
+                                        <div class="col col-sm-6 buyerCode">
+                                            <span style="font-weight: bold;">تلفن تماس</span>
+                                        </div>
+                                    </li>
+                                    <li class="personalDataItem">
+                                        <div class="col col-sm-6 buyerEmail">
+                                            <span>dsds@saa.co</span>
+                                        </div>
+                                        <div class="col col-sm-6 buyerCell">
+                                            <span>09123410112</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bottom-line"></div>
+                            <div class="buyerDataBox formBox">
+                                <ul class=" personalDataList">
+                                    <li class="personalDataHeader">
+                                        <div class="col col-sm-12">
+                                            <span>مجموع مبلغ قابل پرداخت 191600 تومان</span>
+                                        </div>
+                                        <div class="col col-sm-12">
+                                            <button style="border-radius: 20px;"
+                                                class="btn _tt-uc btn-primary-inverse btn-lg btn-block"
+                                                onclick="pay(${saleid})">
+                                                پرداخت
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="padding-bottom: 5px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  `
+    //console.log(data); 
+  }); 
+};
+
+function pay(saleid){
+  paydata = {"SaleID":saleid}
+  postData('/pay', paydata)
+  .then(data => {
+    console.log(data)
+    var form = document.createElement('form');
+    document.body.appendChild(form);
+    form.method = data["RedirectType"];
+    form.action = data["RedirectURL"];
+    const RedirectData = data["RedirectData"]
+    for (var name in RedirectData) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = RedirectData[name];
+        form.appendChild(input);
+        }
+    console.log(form)
+    form.submit();
+  });
+};
+
+
+</script>
+{% endblock %}

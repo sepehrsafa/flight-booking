@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>CORK الگوی مدیریتی تمام ریسپانسیو - فیلتر ستون DataTables</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+
+    <link href="{% static '/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href='{% static "/assets/css/plugins.css" %}' rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link rel="stylesheet" type="text/css" href='{% static "/plugins/table/datatable/datatables.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "/plugins/table/datatable/custom_dt_miscellaneous.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "/assets/css/forms/theme-checkbox-radio.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "/plugins/table/datatable/dt-global_style.css" %}'>
+    <!-- END PAGE LEVEL STYLES -->
+</head>
+<body class="sidebar-noneoverflow">
+    {% csrf_token %}
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="cs-overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN CONTENT AREA  -->
+        
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+                <div class="row layout-spacing">
+                    <div class="col-lg-12">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>نمایش / مخفی کردن ستون ها</h4>
+                                    </div>                           
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive mb-4">
+                                    <table id="show-hide-col" class="table table-hover non-hover" style="width:100%">
+                                        <thead style="border-bottom: none;">
+                                            <tr>
+                                                <th class="text-center">شماره خرید</th>
+                                                <th class="text-center">خریدار</th>
+                                                <th class="text-center">مبدا</th>
+                                                <th class="text-center">مقصد</th>
+                                                <th class="text-center">شماره پرواز</th>
+                                                <th class="text-center">تاریخ پرواز</th>
+                                                <th class="text-center">PNR</th>
+                                                <th class="text-center">ایرلاین</th>
+                                                <th class="text-center">زمان رزرواسیون</th>
+                                                <th class="text-center">قیمت پرداختی</th>
+                                                <th class="text-center">ایمیل</th>
+                                                <th class="text-center">موبایل</th>
+                                                <th class="text-center">وضعیت</th>
+                                                <th class="text-center">عملیات</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody id=salestabeldata>
+                                            <tr>
+                                            </tr>                            
+                                        </tbody>
+    
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+        <div class="footer-wrapper">
+
+                <div class="footer-section f-section-1">
+                    <p class=""> © کپی رایت</p>
+                </div>
+                <div class="footer-section f-section-2">
+ <span class="copyright"> بومی سازی شده توسط : <a href="https://imanpa.ir/store/">  سپهر صفا </a> </span></div>
+            </div>
+        </div>
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+    
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src='{% static "/assets/js/libs/jquery-3.1.1.min.js" %}'></script>
+    <script src='{% static "/bootstrap/js/popper.min.js" %}'></script>
+    <script src='{% static "/bootstrap/js/bootstrap.min.js" %}'></script>
+    <script src='{% static "/plugins/perfect-scrollbar/perfect-scrollbar.min.js" %}'></script>
+    <script src='{% static "/assets/js/app.js" %}'></script>
+    
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src='{% static "/assets/js/custom.js" %}'></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+    
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src='{% static "/plugins/table/datatable/datatables.js" %}'></script>
+    <script src='{% static "/plugins/table/datatable/custom_miscellaneous.js" %}'></script>
+    <!-- END PAGE LEVEL SCRIPTS -->    
+
+    <script>
+
+        async function postData(url = '', data) {
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        const response = await fetch(url, {
+            method: 'POST', 
+            mode: 'same-origin', 
+            cache: 'no-cache', 
+            headers: {
+            "X-CSRFToken": csrftoken,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        console.log(response)
+        return response.json();
+        }
+
+        postData("/dashboard/salesinfo", {})
+        .then(data=>{
+            const saledatainfo = data["saledata"].map(sale => 
+            `<tr>
+                <td class="text-center">${sale["OrderNumber"]}</td>
+                <td class="text-center">${sale["FirstName"]+" "+sale["LastName"]}</td>
+                <td class="text-center">${sale["FlightOriginAirport"]}</td>
+                <td class="text-center">${sale["FlightDestinationAirport"]}</td> 
+                <td class="text-center">${sale["FlightNumber"]}</td>
+                <td class="text-center">${sale["FlightDepartureDataTime"]}</td>
+    
+                <td class="text-center">${sale["PNR"]}</td>
+                <td class="text-center">${sale["FlightAirline"]}</td>
+                <td class="text-center">${sale["OrderTime"]}</td>
+                <td class="text-center">${sale["TotalPrice"]}</td>
+                <td class="text-center">safasepehr@gmail.com</td>
+                <td class="text-center">09123410112</td>
+                <td>
+                    <div class="t-dot bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="کم"></div>
+                </td> 
+                <td class="text-center">
+                    <div class="dropdown custom-dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink9">
+                            <a class="dropdown-item" href="javascript:void(0);">مشاهده</a>
+                            <a class="dropdown-item" href="javascript:void(0);">کنسل</a>
+                            <a class="dropdown-item" href="javascript:void(0);">دریافت بلیط</a>
+                            <a class="dropdown-item" href="javascript:void(0);">ارسال بلیط</a>
+                        </div>
+                    </div>
+                </td> 
+
+            </tr>
+            `).join('');
+            var x = document.getElementById("salestabeldata")
+            x.innerHTML = ""
+            x.innerHTML += saledatainfo 
+            console.log(data)
+        })
+
+
+
+    </script>
+</body>
+</html>

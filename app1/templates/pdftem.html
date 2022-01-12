@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="fa-IR">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body >
+    <p dir="rtl">سوابق کاری</p>
+    <ul dir="rtl">
+        {% for experience in experiences %}
+        <li><a href="{{ experience.url }}">{{ experience.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

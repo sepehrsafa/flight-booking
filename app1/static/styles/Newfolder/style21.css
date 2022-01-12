@@ -1,0 +1,38 @@
+
+.roundbox-input {
+    border-radius: 7px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+    -moz-appearance: checkbox;    /* Firefox */
+    -ms-appearance: checkbox;     /* not currently supported */
+  }
+.roundbox-se {
+    
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 3px 2px rgba(0, 0, 0, .08);
+    -webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .08);
+    -moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .08);
+
+    padding: 0
+}
+
+.round-gray-box-title {
+    border-radius: 5px; 
+    background-color:#f0f0f0; 
+    padding: 10px;
+    margin-bottom:15px
+
+}
+
+.bottom-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom:2px solid #ffc82d; 
+}
+
+.bold-font{
+    font-weight: bold;
+}

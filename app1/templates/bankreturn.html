@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{%load static%}
+{% block header %}
+<title>safar online</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static '/styles/original/font-awesome.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/original/lineicons.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/original/weather-icons.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/original/bootstrap.css' %}"/>
+<link rel="stylesheet" href="{% static '/styles/original/styles.css' %}"/>
+<link rel='stylesheet' href="{% static '/styles/Newfolder/style21.css' %}" />
+<link rel='stylesheet' href="{% static '/styles/Newfolder/style (1).css' %}" />
+{% endblock %}
+{% block content %}
+<div class="theme-page-section theme-page-section-xl theme-page-section-gray">
+    <div class="container">
+        
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="theme-payment-success">
+            <div class="theme-payment-success-header">
+              <i class="fa fa-check-circle theme-payment-success-header-icon"></i>
+              <h1 class="theme-payment-success-title">رزرو شما با موفقیت انجام شد.</h1>
+            </div>    
+              <div class="roundbox-se">
+                <div style="padding: 10px;">
+            <div class="theme-payment-success-box">
+
+              <ul class="theme-payment-success-summary">
+                <li>شماره تراکنش
+                  <span>7249874</span>
+                </li>
+                <li>تاریخ پرداخت
+                  <span> 12:24 - 25/3/1398 </span>
+                </li>
+                <li>مشتری
+                  <span>محمد محمدی</span>
+                </li>
+                <li>کد پیگیری
+                  <span>899932</span>
+                </li>
+                <li>شماره واچر
+                  <span>89993211141</span>
+                </li>
+                <li>نوع پرداخت
+                  <span>کارت اعتباری</span>
+                </li>
+                <li>کل مبلغ پرداختی
+                  <span>3,540,000 ریال</span>
+                </li>
+              </ul>
+              <p class="theme-payment-success-check-order">شما می توانید جزئیات رزرو خود را در صفحه پروفایل خود بررسی کنید.
+                <a href="account-history.html">پنل کاربری</a>
+              </p>
+            </div>
+            <ul class="theme-payment-success-actions">
+              <li>
+                <a href="#">
+                  <i class="fa fa-file-pdf-o"></i>
+                  <p>دریافت
+                    <br/>PDF
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-print"></i>
+                  <p>دریافت
+                    <br/>Print
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-envelope-o"></i>
+                  <p>دریافت
+                    <br/>SMS
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block js %}
+<script src="{%static '/js/jquery.js' %}"></script>
+<script src="{%static '/js/moment.js' %}"></script>
+<script src="{%static '/js/bootstrap.js' %}"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&amp;callback=initMap&amp;libraries=places"></script>
+<script src="{%static '/js/owl-carousel.js' %}"></script>
+<script src="{%static '/js/blur-area.js' %}"></script>
+<script src="{%static '/js/icheck.js' %}"></script>
+<script src="{%static '/js/gmap.js' %}"></script>
+<script src="{%static '/js/magnific-popup.js' %}"></script>
+<script src="{%static '/js/ion-range-slider.js' %}"></script>
+<script src="{%static '/js/sticky-kit.js' %}"></script>
+<script src="{%static '/js/smooth-scroll.js' %}"></script>
+<script src="{%static '/js/fotorama.js' %}"></script>
+<script src="{%static '/js/typeahead.js' %}"></script>
+<script src="{%static '/js/quantity-selector.js' %}"></script>
+<script src="{%static '/js/countdown.js' %}"></script>
+<script src="{%static '/js/window-scroll-action.js' %}"></script>
+<script src="{%static '/js/fitvid.js' %}"></script>
+<script src="{%static '/js/youtube-bg.js' %}"></script>
+<script src="{%static '/js/custom.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,164 @@
+<html dir="rtl">
+<head lang="fa-IR">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Libre Barcode 39' rel='stylesheet'>
+  <style>
+    @font-face {
+    font-family: IranSans;
+    src: url('http://192.168.81.130/static/fonts/IRANSansWeb(FaNum).eot');
+    src: url('http://192.168.81.130/static/fonts/IRANSansWeb(FaNum).eot') format('embedded-opentype'), url('http://192.168.81.130/static/fonts/IRANSansWeb(FaNum).woff2') format('woff2'), url('http://192.168.81.130/static/fonts/IRANSansWeb(FaNum).woff') format('woff'), url('http://192.168.81.130/static/fonts/IRANSansWeb(FaNum).ttf') format('truetype')
+}
+body {
+  font-family: IranSans;
+  font-size: 15px;
+  direction: rtl;
+}
+.ltr{
+  direction: ltr!important;
+}
+    
+    .barcode {
+    font-family: 'Libre Barcode 39';font-size: 50px;
+}
+    .flightinfotable {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+    }
+    .flightinfotableitem {
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+    }
+    .flightinfotr:nth-child(odd) {
+
+      background-color: #e9ecef;
+    }
+    .clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+header {
+
+  
+  border-bottom: 1px solid #AAAAAA;
+}
+
+#logo {
+  float: right;
+  margin-top: 8px;
+}
+
+#logo img {
+  margin-right: 30px;
+  height: 100px;
+}
+
+#company {
+  
+  margin-left: 30px;
+  float: left;
+  text-align: left;
+  font-size:larger;
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 20;
+  border-top: 1px solid #AAAAAA;
+  padding: 8px 0;
+  text-align: center;
+}
+  </style>
+</head>
+
+<body style="border: 2px solid black;">
+  <div style="padding: 20px;">
+  <header class="clearfix">
+    <div id="logo">
+      <img src="http://192.168.81.130/static/img/parselogo.jpg">
+      <img src="http://192.168.81.130/static/img/airline-logo/new/W5.svg" alt="">
+     
+    </div>
+    <div id="company">
+      <div>شماره خرید: 12</div>
+      <div>رفرنس: KerW5</div>
+      <div class="barcode">KerW5</div>
+    </div>
+    </div>
+  </header>
+</div>
+<div style="padding: 20px; ">
+  <div class="flightinfo">
+    <div style="text-align: center; margin-bottom: 20px;">اصلاعات پرواز</div>
+    <table class="flightinfotable">
+      <tr class="flightinfotableitem flightinfotr">
+        <td class="flightinfotableitem">مبدا</td>
+        <td class="flightinfotableitem">مقصد</td>
+        <td class="flightinfotableitem">تاریخ رفت</td>
+        <td class="flightinfotableitem">زمان حرکت</td>
+        <td class="flightinfotableitem">ایرلاین</td>
+        <td class="flightinfotableitem">شماره پرواز</td>
+        <td class="flightinfotableitem">کلاس نرخی</td>
+        <td class="flightinfotableitem">توقف</td>
+      </tr>
+      <tr>
+        <td class="flightinfotableitem">کرمان (KER)</td>
+        <td class="flightinfotableitem">تهران (THR)</td>
+        <td class="flightinfotableitem">2020-08-01 / 1399-08-01</td>
+        <td class="flightinfotableitem">11:55</td>
+        <td class="flightinfotableitem">ماهان</td>
+        <td class="flightinfotableitem">1043</td>
+        <td class="flightinfotableitem">Q</td>
+        <td class="flightinfotableitem">تدارد</td>
+      </tr>
+    </table>
+  </div>
+    <div class="passengerinfo">
+      <div style="text-align: center; padding: 20px;">اصلاعات مسافر</div>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" style="text-align: center;">نام</th>
+            <th scope="col" style="text-align: center;">نام خوانوادگی</th>
+            <th scope="col" style="text-align: center;">شماره بلیط</th>
+            <th scope="col" style="text-align: center;">باره مجاز</th>
+            <th scope="col" style="text-align: center;">دره سنی</th>
+            <th scope="col" style="text-align: center;">قیمت</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td style="text-align: center;">Sepehr</td>
+            <td style="text-align: center;">Safa</td>
+            <td style="text-align: center;">KW24ER</td>
+            <td style="text-align: center;">20</td>
+            <td style="text-align: center;">بزرگ سال</td>
+            <td style="text-align: center;">250,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  <footer>
+    <div>صادر شده توسط شرکت پارسه اوج</div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,473 @@
+{% extends "layout.html" %}
+{%load static%}
+
+{% block header %}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" />
+<link rel="stylesheet" href="{% static '/styles/index/font-awesome.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/index/lineicons.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/index/weather-icons.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/index/bootstrap.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/index/styles.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/index/persian-datepicker.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/index/filter.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/NewFolder/style21.css' %}" />
+<title>safar online index</title>
+{% endblock %}
+{% block content %}
+<div class="theme-hero-area">
+  <div class="theme-hero-area-bg-wrap">
+    <div class="theme-hero-area-bg-pattern theme-hero-area-bg-pattern-ultra-light"
+      style="background-image:url({% static 'img/back-search.jpg'%});"></div>
+    <div class="theme-hero-area-grad-mask theme-hero-area-grad-mask-i"></div>
+  </div>
+  <div class="theme-hero-area-body">
+    <div class="theme-page-section _pt-120 _pb-120 _pv-mob-15">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="theme-search-area-tabs">
+              <div class="tabbable">
+                <ul class="nav nav-tabs nav-white nav-line nav-center nav-lg nav-mob-inline" role="tablist">
+                  <li class="active" role="presentation">
+                    <a aria-controls="SearchAreaTabs-3" role="tab" data-toggle="tab" href="#SearchAreaTabs-Flight">پرواز</a>
+                  </li>
+                  <li role="presentation">
+                    <a aria-controls="SearchAreaTabs-3" role="tab" data-toggle="tab" href="#SearchAreaTabs-Train">قطار</a>
+                  </li>
+                </ul>
+                <div class="tab-content _pt-10">
+                  <div class="tab-pane" id="SearchAreaTabs-Train" role="tab-panel">
+                    <form id=trainsearchform onsubmit= "event.preventDefault();">
+                      <div class="theme-search-area theme-search-area-stacked">
+                        <div class="theme-search-area-form">
+                          <div class="theme-search-area-options theme-search-area-options-dot-white clearfix">
+                            <div class="btn-group theme-search-area-options-list" data-toggle="buttons">
+                              <label class="btn btn-primary active text-light">
+                                <input type="radio" value="OneWay" name="Type" id="flight-option-1"
+                                  onchange="radioboxstatus(this)" checked />یک طرفه
+                              </label>
+                              <label class="btn btn-primary text-light">
+                                <input type="radio" Value="RoundTrip" name="Type" id="flight-option-2"
+                                  onchange="radioboxstatus(this)" />رفت و برگشت
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row" data-gutter="none">
+                            <div class="col-md-5 ">
+                              <div class="row" data-gutter="none">
+                                <div class="col-md-6 ">
+                                  <div
+                                    class="theme-search-area-section first theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-location-pin"></i>
+                                      <div class="autocomplete">
+                                        <input class="theme-search-area-section-input" type="text" placeholder="ایستگاه مبدا"
+                                        data-stationcode="" name="Origin" id="trainoriginbox" style="border-radius: 20px;" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-location-pin"></i>
+                                      <div class="autocomplete">
+                                        <input class="theme-search-area-section-input" type="text" placeholder="ایستگاه مقصد"
+                                        data-stationcode="" name="Destination" id="traindesbox" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 ">
+                              <div class="row" data-gutter="none">
+                                <div class="col-md-4 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                                      <input class="theme-search-area-section-input datePickerStart _mob-h"
+                                        id="datepicker-train-Depart" type="text" placeholder="تاریخ رفت" name="depdate" 
+                                        readonly />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                                      <input class="theme-search-area-section-input datePickerEnd _mob-h"
+                                        style="background: rgb(211, 211, 211)" id="datepicker-train-Return" type="text"
+                                        placeholder="تاریخ برگشت" name="aridate" disabled readonly />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved quantity-selector"
+                                    data-increment="مسافر">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-people"></i>
+                                      <input class="theme-search-area-section-input" value="1" type="text"
+                                        name="AdultQty" readonly />
+                                      <div class="quantity-selector-box" id="FlySearchPassengers">
+                                        <div class="quantity-selector-inner">
+                                          <p class="quantity-selector-title">تعداد مسافر</p>
+                                          <ul class="quantity-selector-controls">
+                                            <li class="quantity-selector-decrement">
+                                              <a href="#">&#45;</a>
+                                            </li>
+                                            <li class="quantity-selector-current">1</li>
+                                            <li class="quantity-selector-increment">
+                                              <a href="#">&#43;</a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-1 ">
+                              <button
+                                class="theme-search-area-submit _mt-0 theme-search-area-submit-no-border theme-search-area-submit theme-search-area-submit-sm theme-search-area-submit-curved" onclick="trainsearchsubmit()">جستجو
+                                <i class="fa fa-arrow-left"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane active" id="SearchAreaTabs-Flight" role="tab-panel">
+                    <form id=flightsearchform onsubmit= "event.preventDefault();">
+                      <div class="theme-search-area theme-search-area-stacked">
+                        <div class="theme-search-area-form">
+                          <div class="theme-search-area-options theme-search-area-options-dot-white clearfix">
+                            <div class="btn-group theme-search-area-options-list" data-toggle="buttons">
+                              <label class="btn btn-primary active text-light">
+                                <input type="radio" value="OneWay" name="Type" id="flight-option-1"
+                                  onchange="radioboxstatus(this)" checked />یک طرفه
+                              </label>
+                              <label class="btn btn-primary text-light">
+                                <input type="radio" Value="RoundTrip" name="Type" id="flight-option-2"
+                                  onchange="radioboxstatus(this)" />رفت و برگشت
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row" data-gutter="none">
+                            <div class="col-md-5 ">
+                              <div class="row" data-gutter="none">
+                                <div class="col-md-6 ">
+                                  <div
+                                    class="theme-search-area-section first theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-location-pin"></i>
+                                      <div class="autocomplete">
+                                        <input class="theme-search-area-section-input" type="text" placeholder="مبدا"
+                                        data-iatacode="" name="Origin" id="flightoriginbox" style="border-radius: 20px;" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-location-pin"></i>
+                                      <div class="autocomplete">
+                                        <input class="theme-search-area-section-input" type="text" placeholder="مقصد"
+                                          data-iatacode="" name="Destination" id="flightdesbox" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 ">
+                              <div class="row" data-gutter="none">
+                                <div class="col-md-4 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                                      <input class="theme-search-area-section-input datePickerStart _mob-h"
+                                        id="datepicker-Depart" type="text" placeholder="تاریخ رفت" name="depdate"
+                                        readonly />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                                      <input class="theme-search-area-section-input datePickerEnd _mob-h"
+                                        style="background: rgb(211, 211, 211)" id="datepicker-Return" type="text"
+                                        placeholder="تاریخ برگشت" name="aridate" disabled readonly />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                  <div
+                                    class="theme-search-area-section theme-search-area-section-fade-white theme-search-area-section-no-border theme-search-area-section-mr theme-search-area-section-sm theme-search-area-section-curved quantity-selector"
+                                    data-increment="مسافر">
+                                    <div class="theme-search-area-section-inner">
+                                      <i class="theme-search-area-section-icon lin lin-people"></i>
+                                      <input class="theme-search-area-section-input" value="1" type="text"
+                                        name="AdultQty" readonly />
+                                      <div class="quantity-selector-box" id="FlySearchPassengers">
+                                        <div class="quantity-selector-inner">
+                                          <p class="quantity-selector-title">تعداد مسافر</p>
+                                          <ul class="quantity-selector-controls">
+                                            <li class="quantity-selector-decrement">
+                                              <a href="#">&#45;</a>
+                                            </li>
+                                            <li class="quantity-selector-current">1</li>
+                                            <li class="quantity-selector-increment">
+                                              <a href="#">&#43;</a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-1 ">
+                              <button class="theme-search-area-submit _mt-0 theme-search-area-submit-no-border theme-search-area-submit theme-search-area-submit-sm theme-search-area-submit-curved" onclick= "flightsearchsubmit()">جستجو
+                                <i class="fa fa-arrow-left"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="theme-page-section theme-page-section-xxl">
+  <div class="container">
+    <div class="theme-page-section-header">
+      <h6 class="theme-page-section-title">توریست شوید!</h6>
+      <p class="theme-page-section-subtitle">تورهای سفرآنلاین ,به یادماندنی وجذاب</p>
+    </div>
+    <div class="row row-col-gap" data-gutter="10">
+      <div class="col-md-4 ">
+        <div
+          class="banner _h-40vh _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in">
+          <div class="banner-bg" style="background-image:url({% static 'img/taj-mahal-india.jpg'%});"></div>
+          <div class="banner-mask"></div>
+          <a class="banner-link" href="#"></a>
+          <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+            <h5 class="banner-title"> هند</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 ">
+        <div
+          class="banner _h-40vh _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in">
+          <div class="banner-bg" style="background-image:url({% static 'img/chine.jpg'%});"></div>
+          <div class="banner-mask"></div>
+          <a class="banner-link" href="#"></a>
+          <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+            <h5 class="banner-title"> چین</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div
+          class="banner _h-33vh _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in">
+          <div class="banner-bg" style="background-image:url({% static 'img/Dubai.jpg'%});"></div>
+          <div class="banner-mask"></div>
+          <a class="banner-link" href="#"></a>
+          <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+            <h5 class="banner-title"> دبی</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div
+          class="banner _h-33vh _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in">
+          <div class="banner-bg" style="background-image:url({% static 'img/logs-at-moraine-lake.jpg'%});"></div>
+          <div class="banner-mask"></div>
+          <a class="banner-link" href="#"></a>
+          <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+            <h5 class="banner-title">کانادا</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div
+          class="banner _h-33vh _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in">
+          <div class="banner-bg"
+            style="background-image:url({% static 'img/beach-coast-daylight-landscape-461969_400x360.jpg' %});"></div>
+          <div class="banner-mask"></div>
+          <a class="banner-link" href="#"></a>
+          <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+            <h5 class="banner-title">پرتغال</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div
+          class="banner _h-33vh _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in">
+          <div class="banner-bg" style="background-image:url({% static 'img/batumalesia.jpg'%});"></div>
+          <div class="banner-mask"></div>
+          <a class="banner-link" href="#"></a>
+          <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+            <h5 class="banner-title">مالزی</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="theme-hero-area">
+  <div class="theme-hero-area-bg-wrap">
+    <div class="theme-hero-area-bg-pattern theme-hero-area-bg-pattern-ultra-light"
+      style="background-image:url({%static 'img/patterns/travel/4.png'%});"></div>
+    <div class="theme-hero-area-grad-mask"></div>
+    <div class="theme-hero-area-inner-shadow theme-hero-area-inner-shadow-light"></div>
+  </div>
+  <div class="theme-hero-area-body">
+    <div class="container">
+      <div class="theme-page-section _p-0">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="theme-mobile-app">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="theme-mobile-app-section">
+                    <div class="theme-mobile-app-body">
+                      <div class="theme-mobile-app-header">
+                        <h2 class="theme-mobile-app-title">دریافت اپلیکیشن سفرآنلاین</h2>
+                        <p class="theme-mobile-app-subtitle">با اپلیکیشن سفرآنلاین سفر پیش روی شماست</p>
+                      </div>
+                      <ul class="theme-mobile-app-btn-list">
+                        <li>
+                          <a class="btn btn-dark theme-mobile-app-btn" href="#">
+                            <i class="theme-mobile-app-logo">
+                              <img src="{% static 'img/brands/apple.png' %}" alt="Image Alternative text"
+                                title="Image Title" />
+                            </i>
+                            <span>Download on
+                              <br />
+                              <span>App Store</span>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="btn btn-dark theme-mobile-app-btn" href="#">
+                            <i class="theme-mobile-app-logo">
+                              <img src="{% static 'img/brands/play-market.png' %}" alt="Image Alternative text"
+                                title="Image Title" />
+                            </i>
+                            <span>Download on
+                              <br />
+                              <span>Play Market</span>
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="theme-mobile-app-section">
+                    <img class="theme-mobile-app-img" src="{%static 'img/mockups/phone-2.png' %}"
+                      alt="Image Alternative text" title="Image Title" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="theme-page-section theme-page-section-xxl">
+  <div class="container">
+    <div class="row row-col-mob-gap" data-gutter="60">
+      <div class="col-md-3 ">
+        <div class="feature feature-white feature-center">
+          <i class="feature-icon _op-04 fa fa-globe"></i>
+          <div class="feature-caption _ph-mob-40">
+            <h5 class="feature-title">پوشش 100 درصدی</h5>
+            <p class="feature-subtitle">کامل‌ترین سایت خرید بلیط
+              پروازهای داخلی، پروازهای خارجی، بلیط قطار و بلیط اتوبوس</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div class="feature feature-white feature-center">
+          <i class="feature-icon _op-04 fa fa-gift"></i>
+          <div class="feature-caption _ph-mob-40">
+            <h5 class="feature-title">هدایا وپاداش ها </h5>
+            <p class="feature-subtitle">ازخدمات ما با هزینه کمتر وسفر بیشتر بهره ببرید.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div class="feature feature-white feature-center">
+          <i class="feature-icon _op-04 fa fa-credit-card"></i>
+          <div class="feature-caption _ph-mob-40">
+            <h5 class="feature-title">کاملترین و ارزانترین نرخ</h5>
+            <p class="feature-subtitle">تضمین ارائه بلیط هواپیما در کلیه مسیرها و شرکتهای هواپیمایی کشور با نرخ های
+              مختلف را می‌دهد.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <div class="feature feature-white feature-center">
+          <i class="feature-icon _op-04 fa fa-comments-o"></i>
+          <div class="feature-caption _ph-mob-40">
+            <h5 class="feature-title">پشتیبانی 24 ساعته</h5>
+            <p class="feature-subtitle">24 ساعت شبانه روز و 7 روز هفته آماده پاسخگویی به شما هستیم</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{%static '/js/main.js' %}"></script>
+<script src="{%static '/js/jquery.js' %}"></script>
+<script src="{%static '/js/moment.js' %}"></script>
+<script src="{%static '/js/bootstrap.js' %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&amp;callback=initMap&amp;libraries=places"></script>
+<script src="{%static '/js/owl-carousel.js' %}"></script>
+<script src="{%static '/js/blur-area.js' %}"></script>
+<script src="{%static '/js/icheck.js' %}"></script>
+<script src="{%static '/js/gmap.js' %}"></script>
+<script src="{%static '/js/magnific-popup.js' %}"></script>
+<script src="{%static '/js/ion-range-slider.js' %}"></script>
+<script src="{%static '/js/sticky-kit.js' %}"></script>
+<script src="{%static '/js/smooth-scroll.js' %}"></script>
+<script src="{%static '/js/fotorama.js' %}"></script>
+<script src="{%static '/js/persian-datepicker.js' %}"></script>
+<script src="{%static '/js/typeahead.js' %}"></script>
+<script src="{%static '/js/quantity-selector.js' %}"></script>
+<script src="{%static '/js/countdown.js' %}"></script>
+<script src="{%static '/js/window-scroll-action.js' %}"></script>
+<script src="{%static '/js/fitvid.js' %}"></script>
+<script src="{%static '/js/youtube-bg.js' %}"></script>
+<script src="{%static '/js/custom.js' %}"></script>
+<script src="{%static '/js/filter.js' %}"></script>
+{% endblock %}

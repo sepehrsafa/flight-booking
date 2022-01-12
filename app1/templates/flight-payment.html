@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+{%load static%}
+{% block header %}
+<title>safar online index</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" />
+<link rel="stylesheet" href="{% static '/styles/search2/font-awesome.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/search2/lineicons.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/search2/weather-icons.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/search2/bootstrap.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/search2/styles.css' %}" />
+
+
+<link rel='stylesheet' href="{% static '/styles/Newfolder/style21.css' %}" />
+<link rel='stylesheet' href="{% static '/styles/Newfolder/style (1).css' %}" />
+{% endblock %}
+{% block content %}
+<div class="theme-page-section theme-page-section-lg" style="background-color: #e6e6e6;">
+    <div class="container">
+        <div class="roundbox-se">
+            <div style="padding: 10px;">
+                <div class="col-md-20">
+                    <div class="theme-payment-page-sections">
+                        <div class="theme-payment-page-sections-item">
+                            <div class="roundbox-se">
+                                <div style="padding: 15px;">
+                                    <div class="theme-search-results-item theme-payment-page-item-thumb">
+                                        <div class="row" data-gutter="20">
+                                            <div class="col-md-9 ">
+                                                <h5 class="theme-search-results-item-title"> ${destination} ← ${origin}</h5>
+                                                <p class="theme-search-results-item-flight-payment-info"><span>1
+                                                        بزرگسال</span>
+                                                    <span>اکونومی</span></p>
+                                                <ul class="theme-search-results-item-flight-payment-dates" onclick="">
+                                                    <li class="_mb-10"><i class="fa fa-calendar"></i> تاریخ رفت:دوشنبه
+                                                        13 خرداد</li>
+                                                </ul>
+                                                <a class="theme-search-results-item-flight-payment-details-link"
+                                                    href="#FlightPaymentDetails" data-toggle="collapse"
+                                                    aria-expanded="false" aria-controls="FlightPaymentDetails">جزئیات
+                                                    پرواز &nbsp;
+                                                    <i class="fa fa-angle-down"></i>
+                                                </a>
+                                                <div class="collapse _pt-20" id="FlightPaymentDetails">
+                                                    ${flightmoredetail}</div>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <div class="theme-search-results-item-img-wrap">
+                                                    <img class="theme-search-results-item-img _mob-h hidden-xs"src="static/img/airline-logo/${airlinecode}.png"alt="Image Alternative text" title="Image Title" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="userinfoform" onsubmit="event.preventDefault();">
+                            <div class="theme-payment-page-sections-item">
+                                <div class="roundbox-se">
+                                    <div style="padding: 15px;">
+                                        <div class="round-gray-box-title">
+                                            <h3 class="theme-payment-page-sections-item-title">اطلاعات مسافر</h3>
+                                        </div>
+                                        <div class="theme-payment-page-form">
+                                            <div class="theme-payment-page-form-title" style="padding-right: 5px;">
+                                                <label>
+                                                    <input type="radio" value="Male" name="Gender"id="gender-option-1"> آقا
+                                                </label>
+                                                <label>
+                                                    <input type="radio" value="Female" name="Gender"id="gender-option-2"> خانم
+                                                </label>
+                                            </div>
+                                            <div class="row row-col-gap" data-gutter="20">
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <input class="form-control" type="text" placeholder="نام"name="FirstName" style="border-radius: 20px;" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <input class="form-control inputstyle" type="text"placeholder=" نام خانوادگی" name="LastName" style="border-radius: 20px;" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <input class="form-control" type="tel" placeholder="کد ملی" name="IDNum" style="border-radius: 20px;" min="10" max="11" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group">
+                                                        <i class="fa fa-angle-down"></i>
+                                                        <select class="form-control" name="Nationality"
+                                                            style="border-radius: 20px;">
+                                                            <option value="IRN">
+                                                                ایران
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-payment-page-sections-item">
+                                <div class="roundbox-se">
+                                    <div style="padding: 15px;">
+                                        <div class="round-gray-box-title">
+                                            <h3 class="theme-payment-page-sections-item-title">اطلاعات تماس مسافر</h3>
+                                        </div>
+                                        <div class="theme-payment-page-form _mb-5">
+                                            <div class="row row-col-gap" data-gutter="20">
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group inputstyle">
+                                                        <input class="form-control" type="email" placeholder="ایمیل"name="email" style="border-radius: 20px;" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 ">
+                                                    <div class="theme-payment-page-form-item form-group inputstyle">
+                                                        <input class="form-control" type="tel" placeholder="تلفن همراه" name="phonenumber"style="border-radius: 20px;" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    <div class="row row-col-gap" data-gutter="20">
+                                                        <div class="col-md-6 ">
+                                                            <div class="theme-payment-page-form-item form-group inputstyle"
+                                                                id="captchapic" style="text-align: center;">
+                                                                <img src="static/img/2.png" alt=""style="border-radius: 20px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 ">
+                                                            <div
+                                                                class="theme-payment-page-form-item form-group inputstyle">
+                                                                <input class="form-control" id="captchacode" name="captchacode" type="tel" placeholder="کد "style="border-radius: 20px;" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-payment-page-sections-item">
+                                <div class="roundbox-se">
+                                    <div style="padding: 15px;">
+                                        <div class="theme-payment-page-booking">
+                                            <div class="theme-payment-page-booking-header _mb-40">
+                                                <h3 class="theme-payment-page-booking-title">مبلغ قابل پرداخت :</h3>
+                                                <p class="theme-payment-page-booking-price text-success">3,289,000 
+                                                    <spanclass="_fs-sm">تومان</span>
+                                                </p>
+                                            </div>
+                                            <button class="btn _tt-uc btn-primary-inverse btn-lg btn-block" style="border-radius: 20px;" onclick="continueshopping(${x})" href="#">
+                                                ادامه‌ی فرآیند خرید
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block js %}
+<script src="{%static '/js/jquery.js' %}"></script>
+<script src="{%static '/js/moment.js' %}"></script>
+<script src="{%static '/js/bootstrap.js' %}"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&amp;callback=initMap&amp;libraries=places"></script>
+<script src="{%static '/js/owl-carousel.js' %}"></script>
+<script src="{%static '/js/blur-area.js' %}"></script>
+<script src="{%static '/js/icheck.js' %}"></script>
+<script src="{%static '/js/gmap.js' %}"></script>
+<script src="{%static '/js/magnific-popup.js' %}"></script>
+<script src="{%static '/js/ion-range-slider.js' %}"></script>
+<script src="{%static '/js/sticky-kit.js' %}"></script>
+<script src="{%static '/js/smooth-scroll.js' %}"></script>
+<script src="{%static '/js/fotorama.js' %}"></script>
+<script src="{%static '/js/typeahead.js' %}"></script>
+<script src="{%static '/js/quantity-selector.js' %}"></script>
+<script src="{%static '/js/countdown.js' %}"></script>
+<script src="{%static '/js/window-scroll-action.js' %}"></script>
+<script src="{%static '/js/fitvid.js' %}"></script>
+<script src="{%static '/js/youtube-bg.js' %}"></script>
+<script src="{%static '/js/custom.js' %}"></script>
+{% endblock %}

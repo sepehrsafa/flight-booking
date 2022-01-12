@@ -1,0 +1,22 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <title>AUTOCOMPLETE WITH JSON</title>
+  <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}"/>
+</head>
+<body>
+  <div class = "container mt-5">
+    <div class = "row">
+      <div class = "col-md-6 m-auto">
+        <div class = "form-group">
+          <input type = "text" id = "search">
+        </div>
+        <div id = "matchlist"></div>
+      </div>
+    </div>
+  </div>
+  <script src = "{% static 'js/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/states-capital.json' %}"></script>
+</body>

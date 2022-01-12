@@ -1,0 +1,364 @@
+{%load static%}
+<!DOCTYPE HTML>
+<html lang="fa">
+<head>
+<meta charset="UTF-8"/>
+<meta  name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+<link rel="icon" href="{% static '/img/parse.ico' %}" type="image/x-icon" />
+
+
+  {% block header %}
+  {% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-theme navbar-theme-abs" id="main-nav">
+      <div class="container">
+        <div class="navbar-inner nav">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" data-target="#navbar-main" data-toggle="collapse" type="button" area-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'app1:index' %}">
+              <img src="{%static '/img/logo.png' %}" alt="Image Alternative text" title="Image Title"/>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li class="active dropdown">
+                <a class="dropdown-toggle" href="index.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">صفحه اصلی</a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-list-items">
+                        <li>
+                          <a href="index.html">صفحه اصلی </a>
+                        </li>
+                        <li>
+                          <a href="index2.html">صفحه اصلی 2</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="index.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> صفحات</a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-list-items">
+                        <li>
+                          <a href="about-us.html">درباره ما</a>
+                        </li>
+                        <li>
+                          <a href="contact.html">تماس باما</a>
+                        </li>
+                        <li>
+                          <a href="payment-success.html"> تاییدیه رزرواسیون</a>
+                        </li>
+                        <li>
+                          <a href="login.html"> ورود به سایت</a>
+                        </li>
+                        <li>
+                          <a href="register.html"> ثبت نام</a>
+                        </li>
+                        <li>
+                          <a href="404.html"> صقحه خطای 404</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="index.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">هتل</a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-list-items">
+                        <li>
+                          <a href="hotel-results.html">لیست همه هتل ها</a>
+                        </li>
+                        <li>
+                          <a href="hotel-page.html">صفحه هتل</a>
+                        </li>
+                        <li>
+                          <a href="hotel-payment.html">رزرو هتل</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="index.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> بلیط هواپیما</a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-list-items">
+                        <li>
+                          <a href="flight-results.html">لیست همه پروازها</a>
+                        </li>
+                        <li>
+                          <a href="flight-payment.html">رزرو پرواز</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="index.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> تور</a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-list-items">
+                        <li>
+                          <a href="tour-results.html">لیست همه تورها</a>
+                        </li>
+                        <li>
+                          <a href="tour-page.html">صفحه تور</a>
+                        </li>
+                        <li>
+                          <a href="tour-payment.html">رزرو تور</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="_desk-h">واحد پول</span>
+                  <b>واحد پول</b>
+                </a>
+                <div class="dropdown-menu">
+                  <div class="row" data-gutter="10">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-select-list-currency">
+                        <li>
+                          <a href="#">
+                            <span>€</span>Euro
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <span>£</span>Pound sterling
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <span>US$</span>U.S. dollar
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="_desk-h">Language</span>
+                  <img class="navbar-flag" src= "{%static '/img/flags/iran.png' %}" alt="Image Alternative text" title="Image Title"/>
+                </a>
+                <div class="dropdown-menu">
+                  <div class="row" data-gutter="10">
+                    <div class="col-md-12">
+                      <ul class="dropdown-meganav-select-list-lang">
+                        <li>
+                          <a href="#">
+                            <img src="{%static '/img/flags/iran.png' %}" alt="Image Alternative text" title="Image Title"/> PERSIAN
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/flags/united-kingdom.png'%}" alt="Image Alternative text" title="Image Title"/> ENGLISH
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/flags/iraq.png'%}" alt="Image Alternative text" title="Image Title"/>العربية
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="navbar-nav-item-user dropdown">
+                <a class="dropdown-toggle" href="account.html" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user-circle-o navbar-nav-item-user-icon"></i>حساب کاربری
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="account.html"> <i class="fa fa-user-o"></i> حساب کاربری  </a>
+                  </li>
+                  <li>
+                    <a href="account-cards.html"> <i class="fa fa-credit-card"></i>  افزایش اعتبار  </a>
+                  </li>
+                  <li>
+                    <a href="account-history.html"> <i class="fa fa-ticket"></i> تاریخچه رزرو </a>
+                  </li>
+                  <li>
+                    <a href="account-travelers.html"> <i class="fa fa-id-card-o"></i>  لیست مسافران </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <div class="theme-footer" id="mainFooter">
+      <div class="container _ph-mob-0">
+        <div class="row row-eq-height row-mob-full" data-gutter="60">
+          <div class="col-md-3">
+            <div class="theme-footer-section theme-footer-">
+              <a class="theme-footer-brand _mb-mob-30" href="#">
+                <img src="{%static 'img/logo.png' %}" alt="Image Alternative text" title="Image Title"/>
+              </a>
+              <div class="theme-footer-brand-text">
+                <p>سفرآنلاین با ارائه بهترین و با کیفیت ترین خدمات گردشگری به صورت آنلاین می کوشد تا به عنوان معتبرترین شرکت گردشگری در ایران، تجربه ی لذت بخش یک رزرو اینترنتی را برایتان تداعی کند. شما در هر کجای دنیا که باشید، در هر ساعت از شبانه روز می توانید از طریق سایت الی گشت بلیط هواپیما، بلیط چارتر، رزرو هتل ارزان قیمت، تورهای مسافرتی و تور لحظه آخری را با پایین ترین نرخ ها انتخاب کنید.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="theme-footer-section theme-footer-">
+                  <h5 class="theme-footer-section-title">سفرآنلاین</h5>
+                  <ul class="theme-footer-section-list">
+                    <li>
+                      <a href="#">درباره ما</a>
+                    </li>
+                    <li>
+                      <a href="#">تماس با ما</a>
+                    </li>
+                    <li>
+                      <a href="#">قوانین و مقررات</a>
+                    </li>
+                    <li>
+                      <a href="#">راهنمای خرید</a>
+                    </li>
+                    <li>
+                      <a href="#">پرسش و پاسخ</a>
+                    </li>
+                    <li>
+                      <a href="#">فرصت‌های شغلی</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="theme-footer-section theme-footer-">
+                  <h5 class="theme-footer-section-title">اطلاعات تکمیلی</h5>
+                  <ul class="theme-footer-section-list">
+                    <li>
+                      <a href="#">چارتر</a>
+                    </li>
+                    <li>
+                      <a href="#">رزرو بلیط هواپیما</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط قطار</a>
+                    </li>
+                    <li>
+                      <a href="#">خرید اینترنتی بلیط هواپیما</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط ارزان هواپیما</a>
+                    </li>
+                    <li>
+                      <a href="#">راهنمای استرداد بلیط</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="theme-footer-section theme-footer-">
+                  <h5 class="theme-footer-section-title">مسیرهای پروازی</h5>
+                  <ul class="theme-footer-section-list">
+                    <li>
+                      <a href="#">بلیط هواپیما تهران به مشهد</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط هواپیما تهران به کیش</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط هواپیما تهران به شیراز</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط هواپیما تهران به تبریز</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط هواپیما تهران به اصفهان</a>
+                    </li>
+                    <li>
+                      <a href="#">بلیط هواپیما تهران به قشم</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="theme-footer-section theme-footer-">
+              <h5 class="theme-footer-section-title">کمک میخواهید؟</h5>
+              <ul class="theme-footer-section-list">
+                <li>
+                  <a href="#">  تهران- تجریش</a>
+                </li>
+                <li>
+                  <a href="#">تلفن: 021123456</a>
+                </li>
+                <li>
+                  <a href="#">پست الکترونیکی :info@gmail.com  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="theme-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="theme-copyright-text">کلیه حقوق این سایت محفوظ و متعلق به آژانس هواپیمایی و جهانگردی سفرآنلاین می‌باشد.</p>
+          </div>
+          <div class="col-md-6">
+            <ul class="theme-copyright-social">
+              <li>
+                <a class="fa fa-facebook" href="#"></a>
+              </li>
+              <li>
+                <a class="fa fa-google" href="#"></a>
+              </li>
+              <li>
+                <a class="fa fa-twitter" href="#"></a>
+              </li>
+              <li>
+                <a class="fa fa-youtube-play" href="#"></a>
+              </li>
+              <li>
+                <a class="fa fa-instagram" href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    {% block js %}
+    {% endblock %}
+
+
+  </body>
+</html>

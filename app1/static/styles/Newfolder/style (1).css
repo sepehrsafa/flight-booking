@@ -1,0 +1,408 @@
+
+.preReservePage .paymentData {
+	display: block
+}
+
+.preReservePage .paymentData .ticketReview {
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	border: 1px solid #ddd;
+	border-width: 0 1px;
+	padding: 0;
+	text-align: center
+}
+
+.preReservePage .paymentData .ticketReview>.content {
+	padding: 1rem
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+	width: 100%
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList>li,
+.preReservePage .paymentData .ticketReview .ticketDataList>li>ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList>li>li,
+.preReservePage .paymentData .ticketReview .ticketDataList>li>ul>li {
+	padding: 1rem 0;
+	margin: 0;
+	display: flex;
+	width: 100%;
+	align-items: center
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataHeader {
+	background-color: #f0f0f0;
+	border-radius: 3px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	padding: 1rem 0
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataHeader span {
+	font-weight: 500;
+	color: #555
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .airlineLogo {
+	text-align: center
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataItem .returnDate,
+.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataItem .wentDate {
+	align-self: baseline
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate,
+.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate {
+	display: flex;
+	flex-direction: column;
+	text-align: right
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textTime,
+.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textTime {
+	color: #222;
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding-bottom: .5rem;
+	font-weight: bold;
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textDate,
+.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textDate {
+	color: #555;
+	font-size: 11px;
+	font-weight: 300
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textDate+.textDate,
+.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textDate+.textDate {
+	font-size: 12px;
+	font-weight: 400;
+	color: #575757;
+	padding-bottom: .5rem
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textCityCode,
+.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textCityCode {
+	direction: ltr;
+	color: #666;
+	font-weight: 700
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textAirportCode,
+.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textAirportCode {
+	color: #777;
+	font-size: 1rem;
+	position: relative;
+	top: -3px
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .defaultText {
+	color: #333;
+	font-size: 1.2rem;
+	font-weight: 400
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li .flightClass {
+	text-align: center
+}
+
+.preReservePage .paymentData .ticketReview .ticketDataList li>ul {
+	width: 100%
+}
+
+.preReservePage .paymentData .personalDataListWrapper.passengerDataToShow {
+	text-align: center;
+
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	border: 1px solid #ddd;
+	border-width: 0 1px;
+	padding: 0
+}
+
+.preReservePage .paymentData .personalDataListWrapper.passengerDataToShow>.content {
+	padding: 1rem
+}
+
+.preReservePage .paymentData .personalDataListWrapper>ul>li {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	padding: 1rem 0;
+	border-radius: 3px
+}
+
+.preReservePage .paymentData .personalDataListWrapper>ul>li.personalDataHeader {
+	background-color: #f0f0f0
+}
+
+.preReservePage .paymentData .buyerDataBox.formBox {
+	text-align: center;
+	margin-top: 1rem;
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	border: 1px solid #ddd;
+	border-width: 0 1px;
+	padding: 0
+}
+
+.preReservePage .paymentData .buyerDataBox.formBox .personalDataList {
+	padding: 15px
+}
+
+.preReservePage .paymentData .paymentDataBox {
+	background: #fff;
+	border-radius: 0 0 3px 3px;
+	box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+	border: 1px solid #ddd;
+	border-width: 0 1px;
+	margin-top: 10px;
+	padding: 2rem 5rem 4rem;
+	margin-bottom: .5rem
+}
+
+.preReservePage .paymentData .paymentDataBox .paymentPrice {
+	font-size: 2rem;
+	color: #696969;
+	margin-bottom: 1rem
+}
+
+.preReservePage .paymentData .paymentDataBox .paymentPrice .priceText {
+	color: #f1c40f;
+	font-weight: 700
+}
+
+.preReservePage .paymentData .paymentDataBox .submitFormBox .checkboxLabel {
+	font-size: 1.5rem!important;
+	color: #555!important
+}
+
+.preReservePage ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+	width: 100%
+}
+
+.preReservePage ul>li {
+	padding: 0;
+	margin: 0
+}
+
+.preReservePage ul>.personalDataHeader,
+.preReservePage ul>.personalDataItem {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	padding: 1rem 0;
+	border-radius: 3px;
+	font-size: 1.4rem;
+	color: #555;
+	font-weight: bold;
+	
+}
+
+.preReservePage ul>.personalDataHeader *,
+.preReservePage ul>.personalDataItem * {
+	font-weight: 400
+}
+
+.preReservePage ul>.personalDataHeader {
+	background-color: #f0f0f0
+}
+
+.preReservePage ul>.personalDataHeader * {
+	font-weight: 500
+}
+
+@media (max-width:576px) {
+	.preReservePage .formBox.buyerDataBox .buyerDataToShow {
+		padding: 1rem 0
+	}
+	.preReservePage .ticketReview .ticketDataList li {
+		padding-right: 0
+	}
+	.preReservePage .ticketReview .ticketDataList li>.col {
+		padding: 0 .4rem
+	}
+	.preReservePage .ticketReview .ticketDataList li>.col.airlineLogo {
+		flex: 0 0 20%;
+		max-width: 20%
+	}
+	.preReservePage .ticketReview .ticketDataList li>.col.returnDate,
+	.preReservePage .ticketReview .ticketDataList li>.col.wentDate {
+		flex: 0 0 40%;
+		max-width: 40%
+	}
+	.preReservePage .ticketReview .ticketDataList li>.col.flightClass {
+		display: none
+	}
+	.preReservePage .paymentData>.formBox>.content,
+	.preReservePage .personalDataListWrapper.passengerDataToShow>.content {
+		padding: 1rem 0!important
+	}
+	.preReservePage .paymentData>.formBox>.content .personalDataHeader>div>* {
+		padding: 0 5px;
+		font-size: 12px;
+		font-weight: 400
+	}
+	.preReservePage .paymentData .ticketReview {
+		padding: 0
+	}
+	.preReservePage .paymentData .ticketReview>.content {
+		padding: 1rem 0
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList {
+		width: 100%
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList>li,
+	.preReservePage .paymentData .ticketReview .ticketDataList>li>ul>li {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		padding: 1rem 0
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataHeader {
+		background-color: #f0f0f0;
+		border-radius: 3px;
+		font-size: 1.4rem
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .airlineLogo {
+		text-align: center
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataItem .returnDate,
+	.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataItem .wentDate {
+		align-self: baseline
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li.ticketDataItem .col {
+		padding: 0 2px
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate,
+	.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate {
+		display: flex;
+		flex-direction: column;
+		text-align: right
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textTime,
+	.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textTime {
+		color: #222;
+		font-size: 1.6rem;
+		font-weight: 700;
+		padding-bottom: .5rem
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textDate,
+	.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textDate {
+		color: #777;
+		font-size: 1rem
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textDate+.textDate,
+	.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textDate+.textDate {
+		font-size: 1.1rem;
+		color: #575757;
+		padding-bottom: .5rem
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textCityCode,
+	.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textCityCode {
+		direction: ltr;
+		color: #666;
+		font-weight: 700
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .returnDate .textAirportCode,
+	.preReservePage .paymentData .ticketReview .ticketDataList li .wentDate .textAirportCode {
+		color: #bbb;
+		font-size: 1rem;
+		position: relative;
+		top: -3px
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .defaultText {
+		color: #333;
+		font-size: 1.2rem
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .flightClass {
+		text-align: center
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li .duration {
+		display: none
+	}
+	.preReservePage .paymentData .ticketReview .ticketDataList li>ul {
+		width: 100%
+	}
+	.preReservePage .paymentData .personalDataList>li {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		padding: 1rem 0;
+		border-radius: 3px;
+		font-size: 1.4rem;
+		color: #8c8c8c
+	}
+	.preReservePage .paymentData .personalDataList>li.personalDataHeader {
+		background-color: #f0f0f0
+	}
+	.preReservePage .paymentData .personalDataList>li>div {
+		word-break: break-all
+	}
+	.preReservePage .paymentData .personalDataList>li>div>span {
+		font-size: 12px;
+		font-weight: 400
+	}
+	.preReservePage .paymentData .paymentDataBox {
+		background: #fff;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+		-webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+		-moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .05);
+		border: 1px solid #ddd;
+		border-width: 0 1px;
+		padding: 2rem 2rem 4rem
+	}
+	.preReservePage .paymentData .paymentDataBox .paymentPrice {
+		font-size: 1.6rem
+	}
+	.preReservePage .paymentData .paymentDataBox .submitFormBox  {
+		font-size: 1.5rem!important;
+		color: #555!important
+	}
+	.preReservePage .paymentData .paymentDataBox .submitFormBox .goToPayment {
+		text-align: center
+	}
+}
+

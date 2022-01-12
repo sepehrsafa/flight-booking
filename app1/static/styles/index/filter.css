@@ -1,0 +1,26 @@
+.autocomplete{
+    position:relative;
+    display:inline-block;
+    width:100%
+}
+.autocomplete-items{
+    position:absolute;
+    border-bottom:none;
+    z-index:99;
+    width:100%;
+    border-top:5px solid transparent
+}
+.autocomplete-items div{
+    padding:10px;
+    cursor:pointer;
+    background-color:#fff;
+    border-bottom:1px solid #d4d4d4
+}
+.autocomplete-items div:hover{
+    background-color:#0093d2;
+    color:#fff
+}
+.autocomplete-active{
+    background-color:#1e90ff!important;
+    color:#fff
+}

@@ -1,0 +1,139 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>رزرو پرواز داخلی / خارجی</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel='stylesheet' id='wp-block-library-css' href="{% static '/styles/original/bootstrap.css' %}" />
+    <link rel='stylesheet' id='wp-block-library-css' href="{% static '/styles/Newfolder/style21.css' %}" />
+
+
+</head>
+
+<body dir="rtl">
+
+    <div class="container">
+        <div class="content reserveFormWrapper">
+              <div class="reserveFormBody preReservePage active">
+                <div class="paymentData">
+                    <div class="ticketReview flightTicketReview">
+                        <div class="content">
+                            <ul class="ticketDataList">
+                                <li class="ticketDataHeader personalDataHeader">
+                                    <div class="col col-sm-2 col-1 airlineLogo">
+                                        <span>ایرلاین</span>
+                                    </div>
+                                    <div class="col col-sm-3 col-sm-4 wentDate">
+                                        <span>حرکت</span>
+                                    </div>
+                                    <div class="col col-sm-3 col-sm-4 returnDate">
+                                        <span>رسیدن</span>
+                                    </div>
+                                    <div class="col col-sm-2 col-2 duration">
+                                        <span>مدت زمان</span>
+                                    </div>
+                                    <div class="col col-sm-2 col-1 flightClass">
+                                        <span>کلاس نرخی</span>
+                                    </div>
+                                </li>
+                                <li class="ticketDataItem personalDataItem">
+                                    <ul class="flightSegmentsList">
+                                        <li class="flightSegmentItems">
+                                            <div class="col col-sm-2 col-1 airlineLogo">
+                                                <img src="static/img/airline-logo/${data["FlightObject"]["Flight_Data"][0]["Airline"]}.png"
+                                                    alt="Mahan Air">
+                                            </div>
+                                            <div class="col col-sm-3 col-sm-4 wentDate">
+                                                <span class="textTime">${data["FlightObject"]["Flight_Data"][0]["DepartureTime"]}</span>
+                                                <span class="textDate">${data["FlightObject"]["Flight_Data"][0]["DepartureDate"]}</span>
+                                                <span class="textDate">${data["FlightObject"]["Flight_Data"][0]["DepartureDateShamsi"]}</span>
+                                                <span class="textCityCode">Tehran
+                                                    (THR)</span>
+                                                <span class="textAirportCode">Mehrabad International Airport</span>
+                                            </div>
+                                            <div class="col col-sm-3 col-sm-4 returnDate">
+                                                <span class="textTime">${data["FlightObject"]["Flight_Data"][0]["ArrivalTime"]}</span>
+                                                <span class="textDate">${data["FlightObject"]["Flight_Data"][0]["ArrivalDate"]}</span>
+                                                <span class="textDate">${data["FlightObject"]["Flight_Data"][0]["ArrivalDateShamsi"]}</span>
+                                                <span class="textCityCode">Mashhad
+                                                    (MHD)</span>
+                                                <span class="textAirportCode">Mashhad International Airport</span>
+                                            </div>
+                                            <div class="col col-sm-2 col-2 duration">
+                                                <span class="defaultText">${data["FlightObject"]["Flight_Data"][0]["Duration"]}</span>
+                                            </div>
+                                            <div class="col col-sm-2 col-1 flightClass">
+                                                <span class="defaultText">WA</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="passengerDataToShow personalDataListWrapper formBox">
+                        <ul class="content personalDataList">
+                            <li class="personalDataHeader">
+                                <div class="col-sm-4 personalName">
+                                    <span>اطلاعات مسافر</span>
+                                </div>
+                                <div class="col-sm-4 personalBirthdate">
+                                    <span>کد شناسایی</span>
+                                </div>
+                                <div class="col-sm-4 personalCode">
+                                    <span>نوع</span>
+                                </div>
+                                <div class="col-sm-4 personalCode">
+                                    <span>قیمت</span>
+                                </div>
+                            </li>
+                            ${passengerinfohtml}
+                        </ul>
+                    </div>
+                    <div class="buyerDataBox formBox">
+                        <ul class="buyerDataToShow personalDataList">
+                            <li class="personalDataHeader">
+                                <div class="col col-sm-6 buyercell">
+                                    <span>آدرس ایمیل</span>
+                                </div>
+                                <div class="col col-sm-6 buyerCode">
+                                    <span>تلفن تماس</span>
+                                </div>
+                            </li>
+                            <li class="personalDataItem">
+                                <div class="col col-sm-6 buyerEmail">
+                                    <span>dsds@saa.co</span>
+                                </div>
+                                <div class="col col-sm-6 buyerCell">
+                                    <span>09123410112</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buyerDataBox formBox">
+                        <ul class=" personalDataList">
+                            <li class="personalDataHeader">
+                                <div class="col col-sm-12">
+                                    <span>مجموع مبلغ قابل پرداخت 191600 تومان</span>
+                                </div>
+                                <div class="col col-sm-12">
+                                <button onclick="pay(${saleid})">
+                                    پرداخت
+                                </button>
+                                </div>
+                            </li>     
+                        </ul>
+                    </div>
+                    <div style="padding-bottom: 5px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
